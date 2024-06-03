@@ -4,6 +4,11 @@ Prototype of Benchmarking javacript code and react components
 
 Go to: [benchmark](src/benchmark)
 
+## Run
+```sh
+yarn dev
+```
+
 ## Output
 ```sh
 {
