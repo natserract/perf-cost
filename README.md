@@ -41,6 +41,10 @@ Margin '±6.81%'
 Samples 42082
 ```
 
+## Tools
+- React.Profiler https://react.dev/reference/react/Profiler
+- TinyBench https://github.com/tinylibs/tinybench
+
 ## Todo
 - Write `benchmarks.log` output file
 - Launch benchmark on self browser (e.g: playwright browser https://playwright.dev/docs/api/class-browser)
