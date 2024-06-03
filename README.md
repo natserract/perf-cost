@@ -1,16 +1,42 @@
-## Finite State Machine (FSM)
-Finite state machine (also called the finite state automaton or finite state automata) is a mathematical model of computation (abstract machine) that describes the system’s behaviour, alternative to other similar models such as the Turing machine. It consists of all possible states of the given object and transitions between them. When compared to the Turing machine, it has less computational power. This computational power distinction means that the computing ability of a FSM is more limited, due to the finite number of states it has (otherwise we would be talking about infinite state machines). 
+## Performance bench
 
-## When should I use a State Machine?
+Prototype of Benchmarking javacript code and react components
 
-There are clear signs that an entity could benefit state-transition model:
-- Entity has a formal "status" property that tracks its current state. 
-- Behavior changes based on status (e.g. some methods cannot be executed in certain statuses). 
-- Events are published as a result of changes to the entity's state. 
-- Spaghetti code in the domain model, specifically a lot of conditional logic in "generic-update" functions.
+Go to: [benchmark](src/benchmark)
 
-If your code reeks of these [code smells](https://en.wikipedia.org/wiki/Code_smell), you should consider implementing a simple state machine. Fortunately, it's not hard to implement a simple FSM using plain code (no frameworks). In the next section, I will demonstrate the creation of a minimalist state machine in JavaScript.
+## Output
+```sh
+{
+    "id": "Hello World",
+    "phase": "mount",
+    "actualDuration": 57.899999998509884,
+    "baseDuration": 23.800000000745058,
+    "startTime": 288.5,
+    "commitTime": 395.90000000037253
+}
+{
+    "id": "components",
+    "phase": "mount",
+    "actualDuration": 36.30000000074506,
+    "baseDuration": 23.299999991431832,
+    "startTime": 358.40000000037253,
+    "commitTime": 395.90000000037253
+}
 
-## Additional reading
-- https://rclayton.silvrback.com/use-state-machines
-- https://xstate.js.org/api/index.html
+Task Name 'String()'
+ops/sec '373,266'
+Average Time (ns) 2679.0493518591065
+Margin '±8.06%'
+Samples 37364
+
+Task Name '.toString()'
+ops/sec '420,819'
+Average Time (ns) 2376.312913238467
+Margin '±6.81%'
+Samples 42082
+```
+
+## Todo
+- Write `benchmarks.log` output file
+- Launch benchmark on self browser (e.g: playwright browser https://playwright.dev/docs/api/class-browser)
+- Run benchmark per-each of scenarios
